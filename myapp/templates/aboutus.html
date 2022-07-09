@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %} About Us | {% endblock title %}
+{% block signup_flow %}
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+  <a href={% url 'signup' %} class="btn btn-success me-md-2" type="button">Sign Up</a>
+</div>
+{% endblock signup_flow %}
+{% block style%}
+
+  img{
+    max-width: 100%;
+    max-height: 100vh;
+  
+  }
+
+  body{
+    background-image: url('./../static/about.jpeg') !important;
+    background-size: 100%;
+  
+    width: 100%;
+    {% comment %} height: 4.5rem; {% endcomment %}
+    
+    background-repeat: no-repeat;
+  }
+    #bg {
+      position: fixed; 
+      top: -50%; 
+      left: -50%; 
+      width: 200%; 
+      height: 200%;
+      background: red
+  }
+  #bg img {
+      position: absolute; 
+      top: 0; 
+      left: 0; 
+      right: 0; 
+      bottom: 0; 
+      margin: auto; 
+      min-width: 50%;
+      min-height: 50%;
+  }
+{% endblock style %}
+
+{% block body %}
+
+<div class="bg">
+  <h1 class="mb-3 h2">Jumbotron</h1>
+
+  <p>
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus praesentium
+    labore accusamus sequi, voluptate debitis tenetur in deleniti possimus modi voluptatum
+    neque maiores dolorem unde? Aut dolorum quod excepturi fugit.
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus praesentium
+    labore accusamus sequi, voluptate debitis tenetur in deleniti possimus modi voluptatum
+    neque maiores dolorem unde? Aut dolorum quod excepturi fugit.
+  </p>
+</div>
+
+{%endblock body%}
