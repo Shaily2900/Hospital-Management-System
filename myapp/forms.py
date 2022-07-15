@@ -1,11 +1,18 @@
 from django import forms
 
-class RegisterForm(forms.Form):
-    first_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    username = forms.CharField(widget=forms.TextInput(attrs={'class':'form-control'}))
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
-    age = forms.IntegerField(widget=forms.NumberInput(attrs={'class':'form-control'}))
-    password = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))
-    password_repeat = forms.CharField(widget=forms.PasswordInput(attrs={'class':'form-control'}))
-    phone_number = forms.CharField(widget=forms.NumberInput(attrs={'class':'form-control'}), required=False)
+
+class AdminSignupForm(forms.Form):
+    first_name = forms.CharField(max_length=50)
+    last_name = forms.CharField(max_length=50)
+    username = forms.CharField(max_length=50)
+    email = forms.EmailField()
+    phone_number = forms.CharField(max_length=50)
+    password = forms.CharField(max_length=50)
+    confirm_password = forms.CharField(max_length=50)
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('password')
+        confirm_password = cleaned_data.get('confirm_password')
+        if password != confirm_password:
+            raise forms.ValidationError('Password and confirm password does not match')

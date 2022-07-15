@@ -8,12 +8,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% block link_bootstrap %}{% endblock link_bootstrap %}
         {% comment %} <link rel="stylesheet" href="{% static 'myapp/css/bootstrap.min.css' %}"></link>> {% endcomment %}
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" 
+        crossorigin="anonymous">
+        <style>
+        {% block style %}
+        {% endblock style %}
+        </style>
       </head>
-    <style>
-        {%block style %}{%endblock style %}
-    </style>
-    <body>
+   
+    <body> 
       <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
           <a class="navbar-brand" href="{% url 'home' %}">Health Care</a>
@@ -28,9 +32,9 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/aboutus">About Us</a>
               </li>
-              {% comment %} <li class="nav-item">
+              <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/admin">Admin</a>
-              </li> {% endcomment %}
+              </li> 
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="/doctor">Doctor</a>
               </li>
@@ -52,14 +56,14 @@
                 <a class="nav-link disabled">Disabled</a>
               </li> {% endcomment %}
             </ul>
-            {% block signup_flow %}
+           
             
-            {% endblock signup_flow %}
+            
             
             <div class="d-grid gap-2 d-md-flex justify-content-md-end">
               <button class="btn btn-primary me-md-2" type="button">Book an Appointment</button>
             </div>
-          
+           
             {% comment %} <form class="d-flex" role="search">
               <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>

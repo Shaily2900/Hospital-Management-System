@@ -1,10 +1,6 @@
 {% extends 'base.html' %}
 {% block title %} About Us | {% endblock title %}
-{% block signup_flow %}
-<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <a href={% url 'signup' %} class="btn btn-success me-md-2" type="button">Sign Up</a>
-</div>
-{% endblock signup_flow %}
+
 {% block style%}
 
   img{
@@ -16,6 +12,8 @@
   body{
     background-image: url('./../static/about.jpeg') !important;
     background-size: 100%;
+    
+   
   
     width: 100%;
     {% comment %} height: 4.5rem; {% endcomment %}
@@ -42,18 +40,20 @@
   }
 {% endblock style %}
 
+
 {% block body %}
 
 <div class="bg">
-  <h1 class="mb-3 h2">Jumbotron</h1>
-
-  <p>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus praesentium
-    labore accusamus sequi, voluptate debitis tenetur in deleniti possimus modi voluptatum
-    neque maiores dolorem unde? Aut dolorum quod excepturi fugit.
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus praesentium
-    labore accusamus sequi, voluptate debitis tenetur in deleniti possimus modi voluptatum
-    neque maiores dolorem unde? Aut dolorum quod excepturi fugit.
+  <div class="container my-5">
+  <h1 class="mb-3 h2">Why Choose Us?</h1>
+  <div class=" my-5" style="width:50%">
+  
+  <p style ="text-align:left;">
+    Leading consultants and professionals from the business choose to work with us thanks to our reputation for excellent treatment, a family-like environment, and cutting-edge medical facilities. 
+    All of our medical professionals are board-certified and have extensive training in their respective fields of expertise. Many of our consultant physicians are also well-known on a global scale. 
+    Our experts follow the Clinical Governance framework, which ensures quality patient care, when working at our institutions. 
+    All of our nurses have a nursing council registration and are properly qualified.
+    At our Hospital, we are dedicated to provide the most cutting-edge medical and surgical care along with the most up-to-date treatment technology to our patients.
   </p>
 </div>
 

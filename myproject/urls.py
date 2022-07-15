@@ -21,6 +21,6 @@ admin.site.site_title = " Hospital Management System Admin Portal"
 admin.site.index_title = "Welcome to Hospital Management System Portal"
 
 urlpatterns = [
-    path('admin/', admin.site.urls, name='admin'),
+    path('main/', admin.site.urls),
     path('',include('myapp.urls'))
 ]
